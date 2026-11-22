@@ -1,0 +1,346 @@
+body{
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif
+
+}
+.sidebar{
+    background-color: #00543C;
+    width:6%;
+    height:100vh;
+    position:fixed;
+    top:0;
+    left:0;
+    display:flex;
+    flex-direction:column;
+    z-index:1000;
+}
+.sidebar-button:not(.logo) img{
+    width:30px;
+    height:30px;
+    object-fit:contain;
+    filter:brightness(0)invert(1);
+}
+.sidebar-button{
+    width:100%;
+    height:45px;
+    object-fit:contain;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:0;
+    background-color:transparent;
+    cursor:pointer;
+    border:none;
+    
+}
+.sidebar-button:not(.logo){
+    transition: background-color 0.5s ease;
+}
+.sidebar-button:focus-visible{
+    outline:3px solid white;
+    outline-offset:-3px
+}
+.logo{
+    
+    margin-bottom:20px;
+    margin-top:10px;
+
+}
+.logo img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+.expand{
+    margin-bottom:10px;
+    margin-top:auto;
+}
+.sidebar-button:not(.logo):hover{
+    background-color: #003D2B;
+}
+
+.dashboard{
+    margin-left: 6%;
+    padding:20px;
+}
+.dashboard h1{
+    margin-top:1%;
+    font-family:Arial, sans-serif;
+    font-weight:600;
+}
+.sidebar-button{
+    position:relative;
+}
+.sidebar-button[data-tooltip]::after{
+    content:attr(data-tooltip);
+    position:absolute;
+    left:100%;
+    top:50%;
+    transform:translateY(-50%);
+    margin-left:3px;
+    opacity:0;
+    visibility: hidden;
+    pointer-events:none;
+    transition:opacity 0.5s ease, transform 0.5s ease, visibility 0.5s;
+
+
+    background-color:#003D2B;
+    color:white;
+    padding:10px 15px;
+    border-radius:6px;
+    font-size:14px;
+    white-space:nowrap;
+    z-index:1001;
+
+}
+.sidebar-button[data-tooltip]:hover::after,.sidebar-button[data-tooltip]:focus-visible::after
+{
+    opacity:1;
+    visibility:visible;
+    transform:translate(10px,-50%)
+}
+
+.main-tabs{
+    display:flex;
+    gap:14px;
+    margin-top:20px;
+}
+.main-tabs a{
+    background-color:#E6F0EB;
+    color:#00543C;
+    padding: 12px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    font-family: "Segoe UI", sans-serif;
+    font-weight:600;
+    font-size:16px;
+    transition:background-color 0.3s ease;
+    position:relative;
+
+}
+.main-tabs a:hover{
+    background-color:#C2DED1;
+}
+.main-tabs a::after{
+    content: "";
+    position:absolute;
+    bottom:0;
+    margin-left:10%;
+    left:0;
+    width:80%;
+    height:3px;
+    background-color:#00543C;
+    transform:scaleX(0);
+    transform-origin:left;
+    transition: transform 0.3s ease;
+}
+.main-tabs a:hover::after, .main-tabs a:focus-visible::after, .main-tabs a.active::after{
+    transform:scaleX(1);
+}
+.main-tabs a.focus-visible{
+    outline:3px solid #00543C;
+    outline-offset:3px;
+}
+.dashboard-content{
+    margin-top:20px;
+    background-color:rgb(255, 255, 255);
+    padding:20px;
+    border:#003D2B solid 3px;
+
+}
+.dashboard-content h2{
+    font-family:Arial, sans-serif;
+    font-weight:600;
+    color:#00543C;
+}
+
+.assignments-frame{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+    gap:20px;
+}
+.assignment{
+    background-color:#E6F0EB;
+    border: 1px solid #C2DED1;
+    border-radius:20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    padding:25px;
+    transition:transform 0.4s ease, box-shadow 0.4s ease;
+
+}
+.assignment:hover{
+    transform:translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    
+}
+.assignment h3{
+    font-family:Arial, sans-serif;
+    font-weight:600;
+    color:#00543C;
+    margin-top: 0;
+}
+.assignment p{
+    color:#003D2B;
+    font-size:14px;
+}
+.assignment.all{
+    
+    
+   
+    text-align:center;
+    font-family:Arial, sans-serif;
+    padding:20px;
+}
+.assignment.all h3{
+    margin-top:20%;
+    margin-bottom:20%;
+}
+
+.courses-frame {
+    background-color: white;
+    border: 3px solid #003D2B;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 20px;
+}
+
+.courses-frame h3 {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    color: #00543C;
+    margin-top: 0;
+}
+
+/* SEARCH BAR */
+
+.course-search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin-top: 25px;
+}
+
+.course-search label {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: #00543C;
+}
+
+.course-search input {
+    padding: 12px 15px;
+    border: 1px solid #C2DED1;
+    border-radius: 12px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.course-search input:hover {
+    border-color: #00543C;
+}
+
+.course-search input:focus-visible {
+    outline: 3px solid #00543C;
+    outline-offset: 2px;
+}
+
+/* COURSE GRID */
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+    gap: 20px;
+
+    list-style: none;
+    padding: 0;
+    margin-top: 25px;
+}
+
+/* COURSE CARDS */
+
+.course-card {
+    background-color: #E6F0EB;
+    border: 1px solid #C2DED1;
+    border-radius: 20px;
+
+    padding: 25px;
+    min-height: 150px;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.course-card h4 {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #00543C;
+    margin-top: 10px;
+}
+
+.course-card p {
+    color: #003D2B;
+    font-size: 14px;
+}
+
+.course-code {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.course-card[hidden] {
+    display: none;
+}
+
+/* COURSE COUNT */
+
+#courseCount {
+    color: #00543C;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+#noCourses {
+    color: #003D2B;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .course-card {
+        transition: none;
+    }
+
+    .course-card:hover {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+h1{
+    color: rgb(0, 34, 0);
+    font-size:36px;
+
+}
+p{
+
+    color:blue;
+    font-size:14px;
+}

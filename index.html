@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Test Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav class="sidebar" aria-label="USF">
+    <button class ="sidebar-button logo" type="button" aria-label="Dashboard">
+        <img src = "dashboard.png" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="Account" data-tooltip="Account">
+        <img src = "account.png" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="Dashboard" data-tooltip="Dashboard">
+        <img src = "dashboard2.webp" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="Courses" data-tooltip="Courses">
+        <img src = "courses.png" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="Inbox" data-tooltip="Inbox">
+        <img src = "inbox.webp" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="History" data-tooltip="History">
+        <img src = "history.png" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="Help" data-tooltip="Need Help?">
+        <img src = "help.png" alt = "">
+    </button>
+
+    <button class ="sidebar-button" type="button" aria-label="Teaching Effectiveness Survey" data-tooltip="Teaching Effectiveness Survey">
+        <img src = "effective.png" alt = "">
+    </button>
+    <button class ="sidebar-button expand" type="button" aria-label="Expand" data-tooltip="Expand">
+        <img src = "arrow.png" alt = "">
+    </button>
+</nav>
+
+<main class="dashboard">
+    <h1>Hello, Jayson Rojas!</h1>
+    <nav class="main-tabs" aria-label="Dashboard sections">
+        <a href = "#dashboard-section" class = "active" aria-current="location">Dashboard</a>
+        <a href = "#courses-section">Courses</a>
+
+    </nav>
+
+    
+    <section id="dashboard-section" class="dashboard-section" tabindex="-1">
+        <h2>Dashboard</h2>
+        <div class="dashboard-content">
+            <h3>Upcoming assignments</h3>
+            <div class="assignments-frame">
+                <div class="assignment">
+                    <h4>Java Programming Lab</h4>
+                    <p>CS112 - Intermediate Java</p>
+                    <p>Due: November 23, 2026</p>
+                </div>
+                <div class="assignment">
+                    <h4>Calculus I</h4>
+                    <p>MATH109 - Calculus Work</p>
+                    <p>Due: November 25, 2026</p>
+                </div>
+                <div class="assignment">
+                    <h4>Rhetoric Analysis</h4>
+                    <p>RHET120 - Rhetoric</p>
+                    <p>Due: November 27, 2026</p>
+                </div>
+                <div class="assignment all" aria-label="View All Assignments">
+                    <h3>View All</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+
+
+    <section id="courses-section" class="dashboard-section" tabindex="-1" hidden>
+
+    <h2>Courses</h2>
+
+    <div class="courses-frame">
+
+        <h3>Fall 2026 Courses</h3>
+
+        <div class="course-search">
+            <label for="courseSearch">Search Courses</label>
+            <input
+                type="search"
+                id="courseSearch"
+                placeholder="Search your courses..."
+            >
+        </div>
+
+        <p id="courseCount" role="status">4 courses found</p>
+
+        <ul class="courses-grid">
+
+            <li class="course-card">
+                <p class="course-code">CS 112</p>
+                <h4>Intermediate Java</h4>
+                <p>Fall 2026</p>
+            </li>
+
+            <li class="course-card">
+                <p class="course-code">MATH 109</p>
+                <h4>Calculus I</h4>
+                <p>Fall 2026</p>
+            </li>
+
+            <li class="course-card">
+                <p class="course-code">POLS 322</p>
+                <h4>Politics of American Justice</h4>
+                <p>Fall 2026</p>
+            </li>
+
+            <li class="course-card">
+                <p class="course-code">RHET 120</p>
+                <h4>Rhetoric</h4>
+                <p>Fall 2026</p>
+            </li>
+
+        </ul>
+
+        <p id="noCourses" hidden>No courses match your search.</p>
+
+    </div>
+
+</section>
+</main>
+
+
+<script src = "script.js"></script>
+</body>
+
+</html>
